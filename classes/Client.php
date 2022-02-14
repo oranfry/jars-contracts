@@ -14,7 +14,7 @@ interface Client
     public function logout();
     public function n2h(int $n);
     public function preview(array $lines);
-    public function record($table, $id, &$content_type);
+    public function record($table, $id, &$content_type = null);
     public function save(array $lines);
     public function touch();
     public function version();
