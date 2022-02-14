@@ -9,12 +9,13 @@ interface Client
     public function get($linetype, $id);
     public function group(string $report, string $group, ?string $min_version = null);
     public function groups(string $report, ?string $min_version = null);
+    public function h2n(string $h);
     public function login(string $username, string $password);
     public function logout();
-    public function preview(array $data);
-    public function record($table, $id);
-    public function save(array $data, bool $dryrun = false);
+    public function n2h(int $n);
+    public function preview(array $lines);
+    public function record($table, $id, &$content_type);
+    public function save(array $lines);
     public function touch();
-    public function unlink($linetype, $id, $parent);
     public function version();
 }
