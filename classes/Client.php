@@ -10,12 +10,14 @@ interface Client
     public function group(string $report, string $group, ?string $min_version = null);
     public function groups(string $report, ?string $min_version = null);
     public function h2n(string $h);
+    public function linetypes(?string $report = null) : array;
     public function login(string $username, string $password);
     public function logout();
     public function n2h(int $n);
     public function preview(array $lines);
     public function record($table, $id, &$content_type = null);
     public function refresh() : string;
+    public function reports() : array;
     public function save(array $lines);
     public function touch();
     public function version();
