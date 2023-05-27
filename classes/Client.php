@@ -12,7 +12,7 @@ interface Client
     public function h2n(string $h): ?int;
     public function linetypes(?string $report = null): array;
     public function login(string $username, string $password): ?string;
-    public function logout(): void;
+    public function logout(): bool;
     public function n2h(int $n): string;
     public function preview(array $lines): array;
     public function record(string $table, string $id, ?string &$content_type = null, ?string &$filename = null): ?string;
