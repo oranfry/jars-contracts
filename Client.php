@@ -8,7 +8,7 @@ interface Client
     public function fields(string $linetype): array;
     public function get(string $linetype, string $id): ?object;
     public function group(string $report, string $group, ?string $min_version = null);
-    public function groups(string $report, ?string $min_version = null): array;
+    public function groups(string $report, string $prefix = '', ?string $min_version = null): array;
     public function h2n(string $h): ?int;
     public function linetypes(?string $report = null): array;
     public function login(string $username, string $password): ?string;
