@@ -1,8 +1,8 @@
 {
-    "name": "oranfry/jars-contracts",
     "autoload": {
         "psr-4": {
             "jars\\contract\\": ""
         }
-    }
+    },
+    "name": "oranfry/jars-contracts"
 }
