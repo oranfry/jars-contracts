@@ -19,6 +19,7 @@ interface Client
     public function refresh(): string;
     public function reports(): array;
     public function save(array $lines): array;
-    public function touch(): ?object;
+    public function token(?string $token = null): null|string|self;
+    public function touch(): object;
     public function version(): ?string;
 }
