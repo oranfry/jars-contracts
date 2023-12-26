@@ -14,6 +14,7 @@ interface Client
     public function login(string $username, string $password): ?string;
     public function logout(): bool;
     public function n2h(int $n): string;
+    public function persist(): self;
     public function preview(array $lines): array;
     public function record(string $table, string $id, ?string &$content_type = null, ?string &$filename = null): ?string;
     public function refresh(): string;
