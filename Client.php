@@ -6,6 +6,7 @@ interface Client
 {
     public function delete(string $linetype, string $id): array;
     public function fields(string $linetype): array;
+    public function flatten(?object $object = null): ?object;
     public function get(string $linetype, string $id): ?object;
     public function group(string $report, string $group = '', string|bool|null $min_version = null);
     public function groups(string $report, string $prefix = '', string|bool|null $min_version = null): array;
