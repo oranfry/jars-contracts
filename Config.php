@@ -7,7 +7,7 @@ use jars\Sequence;
 interface Config
 {
     public function __construct();
-    public function credentialsCorrect(string $username, string $password): bool;
+    public function credentialsCorrect(?string $username = null, ?string $password = null): bool;
     public function download_fields(): array;
     public function float_dp(): array;
     public function linetypes(): array;

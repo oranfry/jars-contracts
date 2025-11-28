@@ -11,8 +11,9 @@ interface Client
     public function group(string $report, string $group = '', string|bool|null $min_version = null);
     public function groups(string $report, string $prefix = '', string|bool|null $min_version = null): array;
     public function h2n(string $h): ?int;
+    public function info(?string $varname = null): array|string|null;
     public function linetypes(?string $report = null): array;
-    public function login(string $username, string $password): ?string;
+    public function login(?string $username = null, ?string $password = null): ?string;
     public function logout(): bool;
     public function n2h(int $n): string;
     public function persist(): self;
