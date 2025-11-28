@@ -12,7 +12,7 @@ interface Client
     public function groups(string $report, string $prefix = '', string|bool|null $min_version = null): array;
     public function h2n(string $h): ?int;
     public function linetypes(?string $report = null): array;
-    public function login(string $username, string $password): ?string;
+    public function login(?string $username, ?string $password): ?string;
     public function logout(): bool;
     public function n2h(int $n): string;
     public function persist(): self;
