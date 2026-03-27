@@ -1,6 +1,6 @@
 <?php
 
-namespace jars\contract;
+namespace OranFry\Jars\Contract;
 
 interface Client
 {
@@ -23,5 +23,4 @@ interface Client
     public function save(array $lines, ?string $base_version = null): array;
     public function token(?string $token = null): self|string|null;
     public function touch(): object;
-    public function version(): ?string;
 }

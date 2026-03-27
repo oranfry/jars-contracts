@@ -1,8 +1,6 @@
 <?php
 
-namespace jars\contract;
-
-use jars\Sequence;
+namespace OranFry\Jars\Contract;
 
 interface Config
 {
@@ -14,6 +12,5 @@ interface Config
     public function report_fields(): array;
     public function reports(): array;
     public function respect_newline_fields(): array;
-    public function sequence(): Sequence;
     public function tables(): array;
 }
