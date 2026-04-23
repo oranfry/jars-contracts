@@ -22,14 +22,23 @@ class JarsConnector
 
     private static function connectLocal(string $connection_string): Jars
     {
-        if (preg_match('/^([^,]+),([^,]+),([^,]+),([^,]+),([^,]+)/', $connection_string, $matches)) {
-            [, $portalClass, $dbHome, $chainRel, $indexRel, $reportsRel] = $matches;
-        } elseif (preg_match('/^([^,]+),([^,]+),([^,]+),([^,]+)/', $connection_string, $matches)) {
-            [, $portalClass, $chainHome, $indexHome, $reportsHome] = $matches;
-        } elseif (preg_match('/^([^,]+),([^,]+)/', $connection_string, $matches)) {
-            [, $portalClass, $dbHome] = $matches;
-        } else {
-            throw new ConnectionStringException('Invalid local connection string. Should be in format "local:{portal_class},{db_home}"');
+        $parts = explode(',', $connection_string);
+
+        switch (count($parts)) {
+            case 2:
+                [$portalClass, $dbHome] = $parts;
+                break;
+
+            case 5:
+                [$portalClass, $chainHome, $indexHome, $reportsHome, $masterHome] = $parts;
+                break;
+
+            case 6:
+                [$portalClass, $dbHome, $chainRel, $indexRel, $reportsRel, $masterRel] = $parts;
+                break;
+
+            default:
+                throw new ConnectionStringException('Invalid local connection string"');
         }
 
         if (!isset($chainHome)) {
@@ -44,7 +53,11 @@ class JarsConnector
             $reportsHome = $dbHome . '/' . ($reportsRel ?? 'reports');
         }
 
-        return Jars::of(new $portalClass, $chainHome, $indexHome, $reportsHome);
+        if (!isset($masterHome)) {
+            $masterHome = $dbHome . '/' . ($masterRel ?? 'master');
+        }
+
+        return Jars::of(new $portalClass, $chainHome, $indexHome, $reportsHome, $masterHome);
     }
 
     private static function connectRemote(string $connection_string): HttpClient
