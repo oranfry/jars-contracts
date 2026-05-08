@@ -10,6 +10,7 @@ interface Client
     public function get(string $linetype_name, string $id): ?object;
     public function group(string $report_name, string $group = '', string|bool|null $min_version = null, ?int $timeout = null);
     public function groups(string $report_name, string $prefix = '', string|bool|null $min_version = null, ?int $timeout = null): array;
+    public function head(): string;
     public function info(?string $varname = null): array|string|null;
     public function linetypes(?string $report_name = null): array;
     public function login(?string $username = null, ?string $password = null): ?string;
