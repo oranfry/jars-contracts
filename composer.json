@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "jars\\contract\\": ""
+            "OranFry\\Jars\\Contract\\": ""
         }
     },
     "name": "oranfry/jars-contracts"
