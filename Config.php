@@ -1,8 +1,8 @@
 <?php
 
-namespace jars\contract;
+namespace OranFry\Jars\Contract;
 
-use jars\Sequence;
+use OranFry\Jars\Core\Sequence;
 
 interface Config
 {

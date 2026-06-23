@@ -1,9 +1,9 @@
 <?php
 
-namespace jars\contract;
+namespace OranFry\Jars\Contract;
 
-use jars\client\HttpClient;
-use jars\Jars;
+use OranFry\Jars\Client\HttpClient;
+use OranFry\Jars\Core\Jars;
 
 class JarsConnector
 {

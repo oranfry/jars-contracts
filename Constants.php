@@ -1,6 +1,6 @@
 <?php
 
-namespace jars\contract;
+namespace OranFry\Jars\Contract;
 
 class Constants
 {

@@ -1,5 +1,5 @@
 <?php
 
-namespace jars\contract;
+namespace OranFry\Jars\Contract;
 
 class BadUsernameOrPasswordException extends Exception {}
