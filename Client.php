@@ -5,6 +5,7 @@ namespace OranFry\Jars\Contract;
 interface Client
 {
     public function delete(string $linetype_name, string $id): array;
+    public function extra(?string $key = null);
     public function fields(string $linetype_name): array;
     public function flatten(?object $object = null): ?object;
     public function get(string $linetype_name, string $id): ?object;
