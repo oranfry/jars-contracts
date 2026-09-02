@@ -7,7 +7,6 @@ class Constants
     const ID_PATTERN = '[0-9a-f]{64}';
     const GROUP_BARREL_PATTERN = '[a-zA-Z0-9]+';
     const GROUP_SUB_PATTERN = '(?:' . self::GROUP_BARREL_PATTERN . ')(?:-(?:' . self::GROUP_BARREL_PATTERN . '))*';
-    const GROUP_FINAL_PATTERN = '(?:' . self::GROUP_SUB_PATTERN . ')?';
     const GROUP_PREFIX_PATTERN = '(?:' . self::GROUP_SUB_PATTERN . '\\/)*';
-    const GROUP_PATTERN = self::GROUP_PREFIX_PATTERN . self::GROUP_FINAL_PATTERN;
+    const GROUP_PATTERN = '(?:' . self::GROUP_PREFIX_PATTERN . self::GROUP_SUB_PATTERN . '|)';
 }
