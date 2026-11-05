@@ -22,6 +22,7 @@ interface Client
     public function record(string $table_name, string $id, ?string &$content_type = null, ?string &$filename = null): ?string;
     public function reports(): array;
     public function save(array $lines, ?int $base_version = null): array;
+    public function saveOne(object $line, ?int $base_version = null): object;
     public function token(?string $token = null): self|string|null;
     public function touch(): object;
     public function version(): ?int;
