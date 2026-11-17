@@ -8,7 +8,7 @@ interface Client
     public function extra(?string $key = null);
     public function fields(string $linetype_name): array;
     public function flatten(?object $object = null): ?object;
-    public function get(string $linetype_name, string $id): ?object;
+    public function get(string $linetype_name, string $id, array $children = []): ?object;
     public function group(string $report_name, string $group = '', int|true|null $min_version = null);
     public function groups(string $report_name, string $prefix = '', int|true|null $min_version = null): array;
     public function h2n(string $h): ?int;
